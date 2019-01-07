@@ -26,18 +26,26 @@ public class Department {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         for (int i = 0; i < 3; i++) {
             Student student = new Student();
-            System.out.println("enter Student name");
+            System.out.println("Enter Student Name");
+            while (true) {
+                student.studentname = in.readLine();
+                if (student.studentname.length() <= 50) {
+                    break;
+                } else {
+                    System.out.println("enter valid studentname:");
+                }
+            }
+            System.out.println("Enter DoB like dd/mm/yyyy");
             String dob;
-            student.studentname = in.readLine();
-            System.out.println("Enter DoB");
             dob = in.readLine();
             Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dob);
             student.dob = date;
             System.out.println("enter Email");
             student.email = in.readLine();
             students.add(student);
+
         }
         return students;
 
     }
-}
+
