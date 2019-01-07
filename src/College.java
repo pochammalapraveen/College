@@ -33,7 +33,7 @@ class College {
                 System.out.println("enter Department");
                 while (true) {
                     department.departmentname = in.readLine();
-                    if (department.departmentname.length() <= 15) {
+                    if (department.departmentname.length() <= 50) {
                         departments.add(department);
                         Students = department.createStudent();
                         j = 0;
@@ -58,7 +58,7 @@ class College {
         while (true) {
             college.collegename = in.readLine();
 
-            if (college.collegename.length() <= 15) {
+            if (college.collegename.length() <= 50) {
                 department1 = college.createDepartment();
                 break;
             } else {
